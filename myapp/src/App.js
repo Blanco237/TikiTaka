@@ -1,11 +1,15 @@
 import React from 'react';
+import './App.css'
+
+import RippleButton from './components/RippleButton/RippleButton';
+
 
 const App = () => {
 
     return (
-        <>
-            <div>React</div>
-        </>
+        <div className='body'>
+            <RippleButton />
+        </div>
     )
 }
 
