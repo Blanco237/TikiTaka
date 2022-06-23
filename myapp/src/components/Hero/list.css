@@ -1,0 +1,95 @@
+.animWrapper {
+    --icons-rotate: rotate;
+    --icons-pulse: pulse;
+    --pulse-time: 3s;
+    --pulse-delay: 0.2s;
+}
+
+.listItem-0 {
+    top: 70px;
+    left: 160px;
+    --icon-bg: rgb(157, 188, 220);
+    --text-bg: #1E5083;
+    --pulse-delay: 0.4s;
+  }
+  
+  .listItem-1 {
+    top: 165px;
+    left: 10px;
+    --icon-bg: rgb(157, 220, 160);
+    --text-bg: #1E8323;
+    --pulse-delay: 0.9s;
+  
+  }
+  
+  .listItem-2 {
+    top: 120px;
+    left: -150px;
+    --icon-bg: rgb(208, 164, 142);
+    --text-bg: #7F5C4C;
+    --pulse-delay: 0.1s;
+  }
+  
+  .listItem-3 {
+    top: 0px;
+    left: -240px;
+    --icon-bg: rgb(230, 158, 158);
+    --text-bg: #932020;
+    --top: -10px;
+    --pulse-delay: 0.7s;
+  
+  }
+  
+  .listItem-4 {
+    top: -130px;
+    left: -235px;
+    --icon-bg: rgb(251, 203, 140);
+    --text-bg: #D07908;
+    --pulse-delay: 0.6s;
+  }
+  
+  .listItem-5 {
+    top: -250px;
+    left: -130px;
+    --icon-bg: rgb(242, 234, 160);
+    --text-bg: #686016;
+    --pulse-delay: 0.4s;
+  }
+  
+  .listItem-6 {
+    top: -250px;
+    left: 70px;
+    --icon-bg: rgb(208, 153, 213);
+    --text-bg: #701778;
+    --pulse-delay: 0.9s;
+  }
+  
+  .listItem-7 {
+    top: -100px;
+    left: 200px;
+    --icon-bg: #f0f7ff;
+    --text-bg: #2E3B84;
+    --pulse-delay: 0.2s;
+  }
+  
+  @keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+        transform: scale(0.8);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.8);
+    }
+  }
+  

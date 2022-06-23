@@ -13,6 +13,7 @@ import logout from './assets/logout.svg';
 import person from './assets/person.svg';
 import plane from './assets/plane-1.svg';
 import ListItem from './ListItem';
+import {RotateContext} from './RotateContext'
 
 
 const Hero = () => {
@@ -51,7 +52,15 @@ const Hero = () => {
         },
     ]
 
+    const {rotate} = React.useContext(RotateContext);
+
+    const rotateStyle = {
+        '--rotate-state': rotate? 'running' : 'paused'
+    };
+
+
   return (
+<>
     <div className={classes.heroContainer}>
         <div className={classes.heroContent}>
             <div className={classes.heroCenter}>
@@ -59,7 +68,7 @@ const Hero = () => {
                     <img src={img1} alt="hero" />
                     <img src={img2} alt="f-hero" className={classes.fHero} />
                 </div>
-                <div className={classes.heroIcons}>
+                <div className={classes.heroIcons} style={rotateStyle}>
                     <ul className={classes.iconList}>
                         {data.map((item, index) => {
                            return( 
@@ -73,6 +82,7 @@ const Hero = () => {
             </div>
         </div>
     </div>
+</>
   )
 }
 

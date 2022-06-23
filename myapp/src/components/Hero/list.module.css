@@ -15,8 +15,10 @@
 }
 
 .animWrapper {
-    animation: var(--icons-rotate) 20s linear infinite reverse running, var(--icons-pulse) var(--pulse-time) linear var(--pulse-delay) infinite running;
+    animation: var(--icons-rotate) 20s linear infinite reverse var(--rotate-state);
 }
+
+
 
 /* .listItemIcon, .listItemText {
     animation: var(--icons-rotate) 20s linear reverse infinite;

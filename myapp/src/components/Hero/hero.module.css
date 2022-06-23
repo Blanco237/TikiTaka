@@ -57,7 +57,7 @@
 
 /****Animation Styling*******/
 .heroIcons{
-    animation: var(--icons-rotate) 20s linear infinite;
+    animation: var(--icons-rotate) 20s linear infinite var(--rotate-state, 'running');
     margin-left: -1rem;
 }
 

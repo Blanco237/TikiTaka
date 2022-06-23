@@ -1,13 +1,14 @@
 import React from 'react';
 import './App.css'
 import Hero from './components/Hero/Hero';
+import HeroBody from './components/Hero/HeroBody';
 
 
 const App = () => {
 
     return (
         <div className='body'>
-            <Hero />
+            <HeroBody />
         </div>
     )
 }
