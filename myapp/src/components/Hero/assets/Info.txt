@@ -1,0 +1,8 @@
+FingerPrint(rgb(230, 158, 158)): HR Information System(#932020)
+Coconut(rgb(208, 164, 142)): Leaves & Holidays(#7F5C4C)
+Logout(rgb(242, 234, 160)): Exit & Off-boarding(#686016)
+Plane-1(#f0f7ff): Travel & Requisitions(#2E3B84)
+Law(rgb(251, 203, 140)): Disciplinary(#D07908)
+Analytics(rgb(157, 188, 220)): Analytics & Reporting(#1E5083)
+Calendar(rgb(157, 220, 160)): Time & Attendance(#1E8323)
+Person(rgb(208, 153, 213)): Onboarding(#701778)
