@@ -12,6 +12,7 @@ import law from './assets/law.svg';
 import logout from './assets/logout.svg';
 import person from './assets/person.svg';
 import plane from './assets/plane-1.svg';
+import ListItem from './ListItem';
 
 
 const Hero = () => {
@@ -51,22 +52,18 @@ const Hero = () => {
     ]
 
   return (
-    <div className={classes.hero__container}>
-        <div className={classes.hero__content}>
-            <div className={classes.hero__center}>
-                <div className={classes.hero__image}>
+    <div className={classes.heroContainer}>
+        <div className={classes.heroContent}>
+            <div className={classes.heroCenter}>
+                <div className={classes.heroImage}>
                     <img src={img1} alt="hero" />
+                    <img src={img2} alt="f-hero" className={classes.fHero} />
                 </div>
-                <div className={classes.hero__icons}>
-                    <ul className={classes.hero__icons__list}>
+                <div className={classes.heroIcons}>
+                    <ul className={classes.iconList}>
                         {data.map((item, index) => {
                            return( 
-                           <li className={`${classes.list__item} ${classes.list__item + index} `} key={index}>
-                            <div className={classes.list__item__icon}>
-                                <img src={item.icon} />
-                                <p className={classes.list__item__text}>{item.text}</p>
-                            </div>
-                        </li>
+                            <ListItem index={index} item={item} />
                            )
                         }
                         )
