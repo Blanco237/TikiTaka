@@ -1,0 +1,57 @@
+import React, { useState } from "react";
+
+import classes from "./home.module.css";
+
+import RippleButton from "../components/RippleButton/RippleButton";
+
+import axios from "axios";
+import validURL from "../utils/validUrl";
+
+const Home = () => {
+  const [url, setUrl] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState("");
+
+  const handleSubmit = async () => {
+    setLoading(true);
+    if (!validURL(url)) {
+      alert("Please Enter a valid URL");
+      setLoading(false);
+      return;
+    }
+    const result = await axios.post("http://localhost:5500/addLink", {
+      long_url: url,
+    });
+    console.log(result.data);
+    setResult(result.data.short_url);
+    setUrl('');
+    setLoading(false);
+  };
+
+  return (
+    <div className={classes.body}>
+      <form className={classes.form} onSubmit={(e) => e.preventDefault()}>
+        <h2>Enter Url To shorten</h2>
+        <input
+          type={"text"}
+          className={classes.input}
+          onChange={(e) => setUrl(e.target.value)}
+          value={url}
+        />
+        <RippleButton clickAction={handleSubmit} disabled={loading}/>
+      </form>
+      <div className={`${classes.result} ${loading ? classes.loading : ""}`}>
+        <h3>Result</h3>
+        {result ? (
+          <a href={`http://localhost:3000/${result}`}>
+            http://localhost:3000/{result}
+          </a>
+        ) : (
+          <a href={`http://localhost:3000/#`}>No result</a>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Home;
