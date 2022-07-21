@@ -4,20 +4,23 @@
     "password": "iGetInt0pc.com!",
     "database": "cardinalrealty",
     "host": "db4free.net",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "port": "3306"
   },
   "test": {
     "username": "blanco237",
     "password": "iGetInt0pc.com!",
     "database": "cardinalrealty",
     "host": "db4free.net",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "port": "3306"
   },
   "production": {
     "username": "blanco237",
     "password": "iGetInt0pc.com!",
     "database": "cardinalrealty",
     "host": "db4free.net",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "port": "3306"
   }
 }
