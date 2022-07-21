@@ -33,10 +33,12 @@ router.get('/:short_url', async (req, res) => {
             short_url
         }
     });
-    // if (link) {
-    //     res.redirect(link.long_url);
-    // }
-    res.json(link);
+    if (link) {
+        res.json(link);
+        return;
+    }
+    const message = {error: "Link not found"};
+    res.json(message);
 });
 
 module.exports = router;
