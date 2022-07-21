@@ -21,6 +21,9 @@
     "database": "cardinalrealty",
     "host": "db4free.net",
     "dialect": "mysql",
+    "dialectOptions": {
+      "socketPath": "/tmp/mysql.sock"
+     },
     "port": "3306"
   }
 }
