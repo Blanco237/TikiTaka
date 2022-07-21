@@ -10,6 +10,10 @@
     flex-direction: column;
 }
 
+.body h2 {
+    color: white;
+}
+
 .body button {
     padding: 0.7rem 1.5rem;
     font-size: 1.1rem;

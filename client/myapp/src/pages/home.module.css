@@ -117,5 +117,7 @@
 }
 
 @media screen and (max-width:768px) {
-    
+    .form, .result, .loading {
+    width: 90%;
+}
 }

@@ -18,27 +18,35 @@ const generateShortUrl = (length) => {
 router.post('/addLink', async (req, res) => {
     const long_url = req.body.long_url;
     const short_url = generateShortUrl(5).trim();
-    const link = await Links.create({
-        long_url,
-        short_url
-    });
-    res.json(link);
+    try{
+        const link = await Links.create({
+            long_url,
+            short_url
+        });
+        res.json(link);
+    }catch(e){
+        res.json(e.message);
+    }
 });
 
 
 router.get('/:short_url', async (req, res) => {
     const short_url = req.params.short_url;
-    const link = await Links.findOne({
-        where: {
-            short_url
+    try {
+        const link = await Links.findOne({
+            where: {
+                short_url
+            }
+        });
+        if (link) {
+            res.json(link);
+            return;
         }
-    });
-    if (link) {
-        res.json(link);
-        return;
+    } catch (e) {
+        const message = { error: "Link not found" };
+        res.json(message);
     }
-    const message = {error: "Link not found"};
-    res.json(message);
+
 });
 
 module.exports = router;

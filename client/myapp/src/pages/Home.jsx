@@ -22,9 +22,12 @@ const Home = () => {
     const result = await axios.post("http://localhost:5500/addLink", {
       long_url: url,
     });
-    console.log(result.data);
-    setResult(result.data.short_url);
-    setUrl('');
+    if(result.data.error) {
+        alert(result.data.error);
+    }else{
+        setResult(result.data.short_url);
+        setUrl('');
+    }
     setLoading(false);
   };
 
