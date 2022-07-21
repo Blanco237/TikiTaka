@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import classes from './rippleButton.module.css';
 
-const RippleButton = () => {
+const RippleButton = ({ clickAction, disabled }) => {
     const [top, setTop] = useState(0);
     const [left, setLeft] = useState(0);
 
@@ -13,6 +13,7 @@ const RippleButton = () => {
         btnRef.current.addEventListener('animationend', () => {
             btnRef.current.classList.remove(classes.pulse);
         });
+        clickAction();
     }
 
     function getPosition(e) {
@@ -29,9 +30,9 @@ const RippleButton = () => {
     };
 
   return (
-    <button ref={btnRef} className={classes.btn} onClick={handleClick}>
+    <button ref={btnRef} className={`${classes.btn} ${disabled? classes.disabled: ''}`} onClick={handleClick} disabled={disabled}>
         <span style={positionStyle} ></span>
-        CLICK ME
+        Submit
     </button>
   )
 }

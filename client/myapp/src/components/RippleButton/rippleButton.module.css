@@ -1,10 +1,12 @@
 .btn{
-    padding: 1.2rem 2.2rem;
-    font-size: 2rem;
+    padding: 0.7rem 1.5rem;
+    font-size: 1.1rem;
+    background-color: #0e8155;
+    border: #0e8155;
+    border-radius: 5px;
     cursor: pointer;
-    background: transparent;
-    border: 2px solid lightgreen;
-    color: lightgreen;
+    color:white;
+    transition: background-color 0.3 ease-in-out;
     text-transform: uppercase;
     position: relative;
     isolation: isolate;
@@ -23,6 +25,10 @@
 
 .pulse span{
     animation: pulse 1s ease;
+}
+
+.disabled {
+    cursor: not-allowed;
 }
 
 @keyframes pulse { 
