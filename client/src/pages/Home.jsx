@@ -46,11 +46,11 @@ const Home = () => {
       <div className={`${classes.result} ${loading ? classes.loading : ""}`}>
         <h3>Result</h3>
         {result ? (
-          <a href={`http://localhost:3000/${result}`}>
-            http://localhost:3000/{result}
+          <a href={`https://randly.vercel.app/${result}`}>
+            https://randly.vercel.app/{result}
           </a>
         ) : (
-          <a href={`http://localhost:3000/#`}>No result</a>
+          <a href={`https://randly.vercel.app/#`}>No result</a>
         )}
       </div>
     </div>
