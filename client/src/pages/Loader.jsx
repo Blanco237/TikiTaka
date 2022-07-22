@@ -6,7 +6,7 @@ import axios from "axios";
 
 const Loader = () => {
   const short_url = window.location.pathname.split("/")[1];
-  const url = `http://localhost:5500/${short_url}`;
+  const url = `https://randly-server.herokuapp.com/${short_url}`;
   const [number, setNumber] = useState(5);
 
   const clickElem = (link)=> {

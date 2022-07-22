@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Hero from './components/Hero/Hero';
 import HeroBody from './components/Hero/HeroBody';
@@ -12,10 +12,10 @@ const App = () => {
     return (
         <div className='body'>
                 <Router>
-                    <Switch>
+                    <Routes>
                         <Route exact path='/' element={<Home />} component={Home} />
                         <Route path='/:short_url' element={<Loader />} component={Loader} />
-                    </Switch>
+                    </Routes>
                 </Router>
         </div>
     )

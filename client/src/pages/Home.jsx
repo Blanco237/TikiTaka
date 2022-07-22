@@ -19,7 +19,7 @@ const Home = () => {
       setLoading(false);
       return;
     }
-    const result = await axios.post("http://localhost:5500/addLink", {
+    const result = await axios.post("https://randly-server.herokuapp.com/addLink", {
       long_url: url,
     });
     if(result.data.error) {
