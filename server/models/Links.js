@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
             unique: true        // unique short_url
         },
         long_url : {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT('long'),
             allowNull: false
         }
     }, {
