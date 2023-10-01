@@ -28,16 +28,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 0;
-  overflow: hidden;
+
+  overflow-x: hidden;
+  /* background-color: white; */
+  background-color: #1B1B1F;
 }
 
 ul {
   list-style-type: none;
-}
-
-.App{
-  margin-left: 6%;
-  text-align: center;
 }
 
 /***List Items****/

@@ -1,8 +1,8 @@
 .btn{
-    padding: 0.7rem 1.5rem;
+    padding: 1rem 2rem;
     font-size: 1.1rem;
-    background-color: #0e8155;
-    border: #0e8155;
+    background-color: transparent;
+    border: 2px solid #0e8155;
     border-radius: 5px;
     cursor: pointer;
     color:white;
@@ -33,7 +33,7 @@
 
 @keyframes pulse { 
     100% {
-        transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) scale(1.2);
         opacity: 0;
     }
 }

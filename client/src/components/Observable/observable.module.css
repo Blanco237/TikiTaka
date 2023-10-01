@@ -1,0 +1,98 @@
+.body {
+    /* outline: 1px solid blue; */
+    width: 125vw;
+    min-width: 900px;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    justify-content: center;
+    transition: all 300ms ease;
+    
+    /* perspective transform section  */
+    transform: perspective(var(--perspective-scale, 45rem)) rotateX(30deg) rotateZ(-7deg) translate(calc(-40% + var(--t-degree)), -0%);
+    isolation: isolate;
+}
+
+@media screen and (max-width: 750px){
+    .body {
+        left: 100%;
+        top: 0%;
+        pointer-events: none;
+    }
+}
+
+.row {
+    display: none;
+    --y-translate: -45px;
+    z-index: -1;
+}
+
+.row:has(img) {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2px;
+}
+
+.row:hover {
+    z-index: 3;
+}
+
+.row:nth-child(even){
+    transform: translate(calc(-1 * (var(--grid-width) / 2)), calc((var(--y-translate) * var(--translate-scale, 1)) - (var(--translate-scale) * 1px)));
+}
+
+.row:nth-child(odd) {
+    transform: translateY(calc((var(--y-translate) * var(--translate-scale, 2)) - (var(--translate-scale) * 1px)));
+}
+
+.row:first-child {
+    transform: translate(0px, 0px);
+}
+
+
+.image {
+    aspect-ratio: 1/1;
+    width: var(--grid-width);
+    object-fit: cover;
+    clip-path: polygon(50% 1%, 100% 26%, 100% 75%, 50% 100%, 0 75%, 0 26%);
+    transition: all 400ms ease;
+    z-index: 1;
+    filter: blur(1px);
+    animation: come_in 700ms ease var(--come-in-delay);
+    box-shadow: black 0px 5px 15rem;
+}
+
+.imageBody {
+    z-index: 1;
+    transition: all 400ms ease;
+}
+
+.imageBody:hover {
+    z-index: 5;
+    filter: drop-shadow(1px 4px 10px rgba(0,0,0,0.7));
+}
+
+.image:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    outline: 5px solid orange;
+    z-index: 5;
+    filter: drop-shadow(8px 8px 10px red);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+@keyframes come_in {
+    from {
+        transform: translateY(-60em);
+        filter: blur(10px) opacity(0%);
+    }
+    to {
+        transform: translateY(0em);
+        filter: blur(0px) opacity(100%);
+    }
+}

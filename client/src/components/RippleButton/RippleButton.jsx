@@ -13,7 +13,10 @@ const RippleButton = ({ clickAction, disabled }) => {
         btnRef.current.addEventListener('animationend', () => {
             btnRef.current.classList.remove(classes.pulse);
         });
-        clickAction();
+
+        if(clickAction && typeof clickAction === 'function'){
+            clickAction();
+        }
     }
 
     function getPosition(e) {
