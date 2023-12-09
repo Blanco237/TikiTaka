@@ -1,0 +1,83 @@
+.body {
+    --displacement-degree: 0;
+    --angle: 0;
+    --x-translate: 1;
+
+    width: 14rem;
+    height: 13rem;
+    position: relative;
+
+}
+
+.eye {
+    isolation: isolate;
+    position: absolute;
+    width: 6rem;
+    height: 80%;
+    outline: 1.5px solid black;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgb(251, 251, 251);
+    border-radius: 3rem / 5rem;
+    box-shadow: 4px 0px 0px black, -2px 0px 10px rgba(0, 0, 0, 0.585);
+    overflow: hidden;
+}
+
+.left {
+    left: 1.5rem;
+}
+
+.right {
+    left: 6.5rem;
+    z-index: 2;
+}
+
+.pupil {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    background-color: rgb(34, 31, 31);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    border-radius: 10px;
+    scale: 1.3 0.4;
+    transform: translate(calc((5px * var(--x-translate)) * ((var(--displacement-degree) / 100) * var(--angle))), calc(3px * var(--angle)));
+    transform-origin: center;
+    transition: scale 300ms ease-out, transform 300ms ease;
+}
+
+.pupil:has(.iris) {
+    scale: 1 1;
+}
+
+.iris {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    right: 2px;
+    top: 0px;
+}
+
+.lid {
+    position: absolute;
+    width: 100%;
+    height: 48%;
+    background-color: rgb(255, 233, 233);
+    border: 1.5px solid rgb(18, 18, 18);
+}
+
+.top {
+    top: 0;
+    transform: translateY(calc(1px * var(--displacement-degree)));
+    /* translate: 0 calc(-3px * (var(--displacement-degree)/100)); */
+    translate: 0 -108px;
+}
+
+.bottom {
+    transform: translateY(calc(-1px * var(--displacement-degree)));
+    translate: 0 108px;
+    bottom: 0;
+}

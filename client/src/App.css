@@ -1,7 +1,8 @@
-
 .body {
-    min-height: 110vh;
+    min-height: 80vh;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    overflow-x: hidden;
+    gap: 3rem;
 }
