@@ -13,6 +13,7 @@ const App = () => {
 
     return (
         <div className='body' >
+            <h1>Cool Startup That Does Cool Things</h1>
             <Observable />
         </div>
     )
