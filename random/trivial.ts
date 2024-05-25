@@ -1,32 +1,23 @@
 import Prompt from "prompt-sync";
 const input = Prompt();
 
-// Get User Input
-// Check if input matches word
-// Check matching characters
-// Check matching positions
-// Print Hint
 const SECRET = "money";
 let found = false;
-let tries = 5;
 
 console.log(`=======================================`);
 console.log(`=============WORD GUESSER==============`);
 console.log(`=======================================`);
 console.log("\n");
 
-console.log("Your first hint: ", new Array(SECRET.length).fill("_").join(" "));
+console.log("Your first hint: ", new Array(SECRET.length).fill("_").join(" "), "\n");
 
 while (found === false) {
-  if (tries === 0) {
-    found = true;
-    continue;
-  }
   let hintArr: Array<string> = [];
   let guess = input("Enter your guess?    ");
 
   while (guess.length !== SECRET.length) {
-    guess = input(`Word has ${SECRET.length} letters?\n Enter Guess?  `);
+    console.log(`Word has ${SECRET.length} letters?`)
+    guess = input(`Enter Guess? `);
   }
   if (guess.toLowerCase() === SECRET) {
     found = true;
@@ -50,13 +41,8 @@ while (found === false) {
   console.log("Your hint: ", hintArr.join(" "));
 }
 
-if (tries === 0) {
-  console.log("OOPS!!\nYou ran out of tries \n");
-  console.log(`Your Word was ${SECRET}`);
-} else {
-  console.log("\n");
-  console.log(`=======================================`);
-  console.log(`================CORRECT================`);
-  console.log(`=======================================`);
-  console.log("\n");
-}
+console.log("\n");
+console.log(`=======================================`);
+console.log(`================CORRECT================`);
+console.log(`=======================================`);
+console.log("\n");
